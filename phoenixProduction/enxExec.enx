@@ -48,5 +48,5 @@ class BasicExecute:
             try:
                 return self.env[node[1]]
             except LookupError:
-                print("ERR Variable undefined '"+node[1]+"'")
+                print("Phoenix Variable Error: undefined '"+node[1]+"'")
                 return 0
