@@ -66,6 +66,10 @@ class BasicParser(Parser):
     def statement(self, p):
         return ('for_loop', ('for_loop_setup', p.var_assign, p.expr), p.statement)
     
+    @_('WHILE expr THEN statement')
+    def statement(self, p):
+        return ('while_loop', ('while_loop_setup', p.var_assign, p.expr), p.statement)
+    
     @_('IF condition THEN statement ELSE statement')
     def statement(self, p):
         return ('if_stmt', p.condition, ('branch', p.statement0, p.statement1))
