@@ -1,2 +1,2 @@
-<img src="logo/Phoenix-logos_transparent.png" width="20%"/>
+<img src="logo/Phoenix-logos_transparentNarrow.png" width="15%"/>
 # Phoenix Project
