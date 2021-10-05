@@ -1,5 +1,6 @@
+import imp
 from sly import Parser
-from . import enxLexer
+enxLexer = imp.load_source('enxLexer', 'phoenixProduction/enxLexer.enx')
 
 class BasicParser(Parser):
     tokens = enxLexer.tokens
