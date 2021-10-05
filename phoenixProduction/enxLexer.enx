@@ -1,13 +1,19 @@
 from sly import Lexer
 
 class BasicLexer(Lexer):
-    tokens = { NAME, NUMBER, STRING }
+    tokens = { NAME, NUMBER, STRING, ID, IF, ELSE, WHILE }
     ignore = '\t '
     literals = { '=', '+', '-', '/', '*', '(', ')', ',', ';'}
 
     # Define tokens as regular expression
     NAME = r'[a-zA-Z_][a-zA-Z0-9_]*'
     STRING = r'\".*?\"'
+    ID = r'[a-zA-Z_][a-zA-z0-9_]*'
+
+    # Special cases
+    ID['if'] = IF
+    ID['else'] = ELSE 
+    ID['while'] = WHILE
 
     # Number token
     @_(r'\d+')

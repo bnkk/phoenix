@@ -3,12 +3,11 @@ from sly import Parser
 enxLexer = imp.load_source('enxLexer', 'phoenixProduction/enxLexer.enx')
 
 class BasicParser(Parser):
-    tokens = enxLexer.tokens
+    tokens = enxLexer.BasicLexer.tokens
 
     precedence = (
         ('left', '+', '-'),
         ('left', '*', '/'),
-        ('right', 'UMINUS'),
     )
 
     def __init__(self):
@@ -50,9 +49,10 @@ class BasicParser(Parser):
     def expr(self, p):
         return ('div', p.expr0, p.expr1)
     
-    @_('"-" expr %perc UMINUS')
-    def expr(self, p):
-        return p.expr
+    # Broken token
+    #@_('"-" expr %perc UMINUS')
+    #def expr(self, p):
+    #    return p.expr
     
     @_('NAME')
     def expr(self, p):
