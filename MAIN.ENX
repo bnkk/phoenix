@@ -6,7 +6,7 @@ enxExec = imp.load_source('enxExec', 'phoenixProduction/enxExec.enx')
 if __name__ == '__main__':
     lexer = enxLexer.BasicLexer()
     parser = enxParser.BasicParser()
-    print('Phoenix 0.1.2 (tags/prerelease:)')
+    print('Phoenix 0.1.2 (tags/prerelease:863d8b2)')
     env = {}
 
     while True:
